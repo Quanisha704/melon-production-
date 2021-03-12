@@ -1,6 +1,5 @@
 import robots
 
-
 class Melon(object):
     """Melon."""
 
@@ -20,6 +19,7 @@ class Melon(object):
 
         robots.cleanerbot.clean(self)
         robots.stickerbot.apply_logo(self)
+        robots.painterbot.paint(self)
 
     def __str__(self):
         """Print out information about melon."""
@@ -33,4 +33,6 @@ class Melon(object):
 
 # FIXME: Add Squash class definition here.
 class Squash(Melon):
-    pass
+    def prep(self):
+        super().prep()
+        robots.painterbot.paint(self)
